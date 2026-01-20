@@ -1188,14 +1188,22 @@ environment. Defaults to None.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="relucent.poly.Polyhedron.get_hs">
-<span class="sig-name descname"><span class="pre">get_hs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#relucent.poly.Polyhedron.get_hs" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_hs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">get_all_Ab</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#relucent.poly.Polyhedron.get_hs" title="Link to this definition">¶</a></dt>
 <dd><p>Get the halfspace representation of this polyhedron.</p>
 <p>Computes the halfspaces (inequality constraints) that define the polyhedron
 from all neurons in the network. The result includes constraints from
 every neuron, not just the supporting hyperplanes.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><dl class="simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> – Optional input data to the network for verification. If provided,
+checks that computed outputs match network outputs. Defaults to None.</p></li>
+<li><p><strong>get_all_Ab</strong> – If True, returns all intermediate affine maps (A, b) for
+each layer instead of just the final halfspaces. Defaults to False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
 <dt>(halfspaces, W, b) where:</dt><dd><ul class="simple">
 <li><p>halfspaces: Array of shape (n_constraints, n_dim+1) with bias terms</p></li>
 <li><p>W: Affine transformation matrix</p></li>
@@ -1205,55 +1213,8 @@ every neuron, not just the supporting hyperplanes.</p>
 </dl>
 </p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>tuple</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="relucent.poly.Polyhedron.get_hs_numpy">
-<span class="sig-name descname"><span class="pre">get_hs_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">get_all_Ab</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#relucent.poly.Polyhedron.get_hs_numpy" title="Link to this definition">¶</a></dt>
-<dd><p>Get halfspaces when the sign sequence is a numpy array.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> – Optional input data to the network for verification. If provided,
-checks that computed outputs match network outputs. Defaults to None.</p></li>
-<li><p><strong>get_all_Ab</strong> – If True, returns all intermediate affine maps (A, b) for
-each layer instead of just the final halfspaces. Defaults to False.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>(halfspaces, W, b) tuple.
-If get_all_Ab is True: List of dicts with ‘A’, ‘b’, and ‘layer’ keys.</p>
-</dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>If get_all_Ab is False</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="relucent.poly.Polyhedron.get_hs_torch">
-<span class="sig-name descname"><span class="pre">get_hs_torch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">get_all_Ab</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#relucent.poly.Polyhedron.get_hs_torch" title="Link to this definition">¶</a></dt>
-<dd><p>Get halfspaces when the sign sequence is a torch.Tensor.</p>
-<p>Computes the halfspace representation using PyTorch operations.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> – Optional input data to the network for verification. If provided,
-checks that computed outputs match network outputs. Defaults to None.</p></li>
-<li><p><strong>get_all_Ab</strong> – If True, returns all intermediate affine maps (A, b) for
-each layer instead of just the final halfspaces. Defaults to False.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>(halfspaces, W, b) tuple.
-If get_all_Ab is True: List of dicts with ‘A’, ‘b’, and ‘layer’ keys.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>If get_all_Ab is False</p>
+<dd class="field-odd"><p>tuple</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1831,41 +1792,172 @@ the first network).</p></li>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">relucent</a></h1>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">relucent package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-relucent.bvs">relucent.bvs module</a><ul>
+<li><a class="reference internal" href="#relucent.bvs.BVManager"><code class="docutils literal notranslate"><span class="pre">BVManager</span></code></a><ul>
+<li><a class="reference internal" href="#relucent.bvs.BVManager.add"><code class="docutils literal notranslate"><span class="pre">BVManager.add()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#relucent.bvs.BVPriorityQueue"><code class="docutils literal notranslate"><span class="pre">BVPriorityQueue</span></code></a><ul>
+<li><a class="reference internal" href="#relucent.bvs.BVPriorityQueue.pop"><code class="docutils literal notranslate"><span class="pre">BVPriorityQueue.pop()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.bvs.BVPriorityQueue.push"><code class="docutils literal notranslate"><span class="pre">BVPriorityQueue.push()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.bvs.BVPriorityQueue.remove_task"><code class="docutils literal notranslate"><span class="pre">BVPriorityQueue.remove_task()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.bvs.BVPriorityQueue.REMOVED"><code class="docutils literal notranslate"><span class="pre">BVPriorityQueue.REMOVED</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-relucent.complex">relucent.complex module</a><ul>
+<li><a class="reference internal" href="#relucent.complex.Complex"><code class="docutils literal notranslate"><span class="pre">Complex</span></code></a><ul>
+<li><a class="reference internal" href="#relucent.complex.Complex.add_bv"><code class="docutils literal notranslate"><span class="pre">Complex.add_bv()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.add_point"><code class="docutils literal notranslate"><span class="pre">Complex.add_point()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.add_polyhedron"><code class="docutils literal notranslate"><span class="pre">Complex.add_polyhedron()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.adjacent_polyhedra"><code class="docutils literal notranslate"><span class="pre">Complex.adjacent_polyhedra()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.bfs"><code class="docutils literal notranslate"><span class="pre">Complex.bfs()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.bv2poly"><code class="docutils literal notranslate"><span class="pre">Complex.bv2poly()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.bv_iterator"><code class="docutils literal notranslate"><span class="pre">Complex.bv_iterator()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.clean_data"><code class="docutils literal notranslate"><span class="pre">Complex.clean_data()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.dfs"><code class="docutils literal notranslate"><span class="pre">Complex.dfs()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.get_dual_graph"><code class="docutils literal notranslate"><span class="pre">Complex.get_dual_graph()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.get_poly_attrs"><code class="docutils literal notranslate"><span class="pre">Complex.get_poly_attrs()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.greedy_path"><code class="docutils literal notranslate"><span class="pre">Complex.greedy_path()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.hamming_astar"><code class="docutils literal notranslate"><span class="pre">Complex.hamming_astar()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.parallel_add"><code class="docutils literal notranslate"><span class="pre">Complex.parallel_add()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.plot"><code class="docutils literal notranslate"><span class="pre">Complex.plot()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.plot3d"><code class="docutils literal notranslate"><span class="pre">Complex.plot3d()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.point2bv"><code class="docutils literal notranslate"><span class="pre">Complex.point2bv()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.point2poly"><code class="docutils literal notranslate"><span class="pre">Complex.point2poly()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.random_walk"><code class="docutils literal notranslate"><span class="pre">Complex.random_walk()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.recover_from_dual_graph"><code class="docutils literal notranslate"><span class="pre">Complex.recover_from_dual_graph()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.searcher"><code class="docutils literal notranslate"><span class="pre">Complex.searcher()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.Complex.dim"><code class="docutils literal notranslate"><span class="pre">Complex.dim</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#relucent.complex.astar_calculations"><code class="docutils literal notranslate"><span class="pre">astar_calculations()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.get_ip"><code class="docutils literal notranslate"><span class="pre">get_ip()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.poly_calculations"><code class="docutils literal notranslate"><span class="pre">poly_calculations()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.complex.set_globals"><code class="docutils literal notranslate"><span class="pre">set_globals()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-relucent.convert_model">relucent.convert_model module</a><ul>
+<li><a class="reference internal" href="#relucent.convert_model.avgpool2d_to_affine"><code class="docutils literal notranslate"><span class="pre">avgpool2d_to_affine()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.convert_model.combine_linear_layers"><code class="docutils literal notranslate"><span class="pre">combine_linear_layers()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.convert_model.convert"><code class="docutils literal notranslate"><span class="pre">convert()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.convert_model.flatten_to_affine"><code class="docutils literal notranslate"><span class="pre">flatten_to_affine()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.convert_model.torch_conv_layer_to_affine"><code class="docutils literal notranslate"><span class="pre">torch_conv_layer_to_affine()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-relucent.model">relucent.model module</a><ul>
+<li><a class="reference internal" href="#relucent.model.NN"><code class="docutils literal notranslate"><span class="pre">NN</span></code></a><ul>
+<li><a class="reference internal" href="#relucent.model.NN.forward"><code class="docutils literal notranslate"><span class="pre">NN.forward()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.model.NN.get_all_layer_outputs"><code class="docutils literal notranslate"><span class="pre">NN.get_all_layer_outputs()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.model.NN.get_grid"><code class="docutils literal notranslate"><span class="pre">NN.get_grid()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.model.NN.output_grid"><code class="docutils literal notranslate"><span class="pre">NN.output_grid()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.model.NN.shi2weights"><code class="docutils literal notranslate"><span class="pre">NN.shi2weights()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.model.NN.device"><code class="docutils literal notranslate"><span class="pre">NN.device</span></code></a></li>
+<li><a class="reference internal" href="#relucent.model.NN.dtype"><code class="docutils literal notranslate"><span class="pre">NN.dtype</span></code></a></li>
+<li><a class="reference internal" href="#relucent.model.NN.num_relus"><code class="docutils literal notranslate"><span class="pre">NN.num_relus</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#relucent.model.get_mlp_model"><code class="docutils literal notranslate"><span class="pre">get_mlp_model()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-relucent.poly">relucent.poly module</a><ul>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron"><code class="docutils literal notranslate"><span class="pre">Polyhedron</span></code></a><ul>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.clean_data"><code class="docutils literal notranslate"><span class="pre">Polyhedron.clean_data()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.compute_properties"><code class="docutils literal notranslate"><span class="pre">Polyhedron.compute_properties()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.get_bounded_halfspaces"><code class="docutils literal notranslate"><span class="pre">Polyhedron.get_bounded_halfspaces()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.get_bounded_vertices"><code class="docutils literal notranslate"><span class="pre">Polyhedron.get_bounded_vertices()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.get_center_inradius"><code class="docutils literal notranslate"><span class="pre">Polyhedron.get_center_inradius()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.get_hs"><code class="docutils literal notranslate"><span class="pre">Polyhedron.get_hs()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.get_interior_point"><code class="docutils literal notranslate"><span class="pre">Polyhedron.get_interior_point()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.get_shis"><code class="docutils literal notranslate"><span class="pre">Polyhedron.get_shis()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.is_face_of"><code class="docutils literal notranslate"><span class="pre">Polyhedron.is_face_of()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.nflips"><code class="docutils literal notranslate"><span class="pre">Polyhedron.nflips()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.plot2d"><code class="docutils literal notranslate"><span class="pre">Polyhedron.plot2d()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.plot3d"><code class="docutils literal notranslate"><span class="pre">Polyhedron.plot3d()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.MAX_RADIUS"><code class="docutils literal notranslate"><span class="pre">Polyhedron.MAX_RADIUS</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.W"><code class="docutils literal notranslate"><span class="pre">Polyhedron.W</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.Wl2"><code class="docutils literal notranslate"><span class="pre">Polyhedron.Wl2</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.b"><code class="docutils literal notranslate"><span class="pre">Polyhedron.b</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.center"><code class="docutils literal notranslate"><span class="pre">Polyhedron.center</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.ch"><code class="docutils literal notranslate"><span class="pre">Polyhedron.ch</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.finite"><code class="docutils literal notranslate"><span class="pre">Polyhedron.finite</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.halfspaces"><code class="docutils literal notranslate"><span class="pre">Polyhedron.halfspaces</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.hs"><code class="docutils literal notranslate"><span class="pre">Polyhedron.hs</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.inradius"><code class="docutils literal notranslate"><span class="pre">Polyhedron.inradius</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.interior_point"><code class="docutils literal notranslate"><span class="pre">Polyhedron.interior_point</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.interior_point_norm"><code class="docutils literal notranslate"><span class="pre">Polyhedron.interior_point_norm</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.num_dead_relus"><code class="docutils literal notranslate"><span class="pre">Polyhedron.num_dead_relus</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.num_faces"><code class="docutils literal notranslate"><span class="pre">Polyhedron.num_faces</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.num_shis"><code class="docutils literal notranslate"><span class="pre">Polyhedron.num_shis</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.point"><code class="docutils literal notranslate"><span class="pre">Polyhedron.point</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.shis"><code class="docutils literal notranslate"><span class="pre">Polyhedron.shis</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.tag"><code class="docutils literal notranslate"><span class="pre">Polyhedron.tag</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.vertex_set"><code class="docutils literal notranslate"><span class="pre">Polyhedron.vertex_set</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.vertices"><code class="docutils literal notranslate"><span class="pre">Polyhedron.vertices</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.Polyhedron.volume"><code class="docutils literal notranslate"><span class="pre">Polyhedron.volume</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#relucent.poly.encode_bv"><code class="docutils literal notranslate"><span class="pre">encode_bv()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.poly.solve_radius"><code class="docutils literal notranslate"><span class="pre">solve_radius()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-relucent.utils">relucent.utils module</a><ul>
+<li><a class="reference internal" href="#relucent.utils.BlockingQueue"><code class="docutils literal notranslate"><span class="pre">BlockingQueue</span></code></a><ul>
+<li><a class="reference internal" href="#relucent.utils.BlockingQueue.close"><code class="docutils literal notranslate"><span class="pre">BlockingQueue.close()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.utils.BlockingQueue.pop"><code class="docutils literal notranslate"><span class="pre">BlockingQueue.pop()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.utils.BlockingQueue.push"><code class="docutils literal notranslate"><span class="pre">BlockingQueue.push()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.utils.BlockingQueue.stopFlag"><code class="docutils literal notranslate"><span class="pre">BlockingQueue.stopFlag</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#relucent.utils.NonBlockingQueue"><code class="docutils literal notranslate"><span class="pre">NonBlockingQueue</span></code></a><ul>
+<li><a class="reference internal" href="#relucent.utils.NonBlockingQueue.close"><code class="docutils literal notranslate"><span class="pre">NonBlockingQueue.close()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.utils.NonBlockingQueue.pop"><code class="docutils literal notranslate"><span class="pre">NonBlockingQueue.pop()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.utils.NonBlockingQueue.push"><code class="docutils literal notranslate"><span class="pre">NonBlockingQueue.push()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.utils.NonBlockingQueue.stopFlag"><code class="docutils literal notranslate"><span class="pre">NonBlockingQueue.stopFlag</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#relucent.utils.data_graph"><code class="docutils literal notranslate"><span class="pre">data_graph()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.utils.get_colors"><code class="docutils literal notranslate"><span class="pre">get_colors()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.utils.get_env"><code class="docutils literal notranslate"><span class="pre">get_env()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.utils.set_seeds"><code class="docutils literal notranslate"><span class="pre">set_seeds()</span></code></a></li>
+<li><a class="reference internal" href="#relucent.utils.split_sequential"><code class="docutils literal notranslate"><span class="pre">split_sequential()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-relucent">Module contents</a></li>
+</ul>
+</li>
+</ul>
 
-
-
-
-
-
-
-
-
-<search id="searchbox" style="display: none" role="search">
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</search>
-<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
-
-<div class="relations">
+  </div><div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
   </ul></li>
 </ul>
 </div>
-
-
-
-
-
-
-
-
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/relucent.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
