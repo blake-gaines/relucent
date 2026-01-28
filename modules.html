@@ -66,6 +66,7 @@
 <li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.complex.Complex.get_poly_attrs"><code class="docutils literal notranslate"><span class="pre">Complex.get_poly_attrs()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.complex.Complex.greedy_path"><code class="docutils literal notranslate"><span class="pre">Complex.greedy_path()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.complex.Complex.hamming_astar"><code class="docutils literal notranslate"><span class="pre">Complex.hamming_astar()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.complex.Complex.load"><code class="docutils literal notranslate"><span class="pre">Complex.load()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.complex.Complex.parallel_add"><code class="docutils literal notranslate"><span class="pre">Complex.parallel_add()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.complex.Complex.plot"><code class="docutils literal notranslate"><span class="pre">Complex.plot()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.complex.Complex.plot3d"><code class="docutils literal notranslate"><span class="pre">Complex.plot3d()</span></code></a></li>
@@ -73,6 +74,7 @@
 <li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.complex.Complex.point2poly"><code class="docutils literal notranslate"><span class="pre">Complex.point2poly()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.complex.Complex.random_walk"><code class="docutils literal notranslate"><span class="pre">Complex.random_walk()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.complex.Complex.recover_from_dual_graph"><code class="docutils literal notranslate"><span class="pre">Complex.recover_from_dual_graph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.complex.Complex.save"><code class="docutils literal notranslate"><span class="pre">Complex.save()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.complex.Complex.searcher"><code class="docutils literal notranslate"><span class="pre">Complex.searcher()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.complex.Complex.dim"><code class="docutils literal notranslate"><span class="pre">Complex.dim</span></code></a></li>
 </ul>
@@ -169,7 +171,92 @@
 <li class="toctree-l3"><a class="reference internal" href="relucent.html#relucent.utils.split_sequential"><code class="docutils literal notranslate"><span class="pre">split_sequential()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="relucent.html#module-relucent">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relucent.html#module-relucent">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="relucent.html#relucent.BVManager"><code class="docutils literal notranslate"><span class="pre">BVManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.BVManager.add"><code class="docutils literal notranslate"><span class="pre">BVManager.add()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="relucent.html#relucent.Complex"><code class="docutils literal notranslate"><span class="pre">Complex</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.add_bv"><code class="docutils literal notranslate"><span class="pre">Complex.add_bv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.add_point"><code class="docutils literal notranslate"><span class="pre">Complex.add_point()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.add_polyhedron"><code class="docutils literal notranslate"><span class="pre">Complex.add_polyhedron()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.adjacent_polyhedra"><code class="docutils literal notranslate"><span class="pre">Complex.adjacent_polyhedra()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.bfs"><code class="docutils literal notranslate"><span class="pre">Complex.bfs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.bv2poly"><code class="docutils literal notranslate"><span class="pre">Complex.bv2poly()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.bv_iterator"><code class="docutils literal notranslate"><span class="pre">Complex.bv_iterator()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.clean_data"><code class="docutils literal notranslate"><span class="pre">Complex.clean_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.dfs"><code class="docutils literal notranslate"><span class="pre">Complex.dfs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.get_dual_graph"><code class="docutils literal notranslate"><span class="pre">Complex.get_dual_graph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.get_poly_attrs"><code class="docutils literal notranslate"><span class="pre">Complex.get_poly_attrs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.greedy_path"><code class="docutils literal notranslate"><span class="pre">Complex.greedy_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.hamming_astar"><code class="docutils literal notranslate"><span class="pre">Complex.hamming_astar()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.load"><code class="docutils literal notranslate"><span class="pre">Complex.load()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.parallel_add"><code class="docutils literal notranslate"><span class="pre">Complex.parallel_add()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.plot"><code class="docutils literal notranslate"><span class="pre">Complex.plot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.plot3d"><code class="docutils literal notranslate"><span class="pre">Complex.plot3d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.point2bv"><code class="docutils literal notranslate"><span class="pre">Complex.point2bv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.point2poly"><code class="docutils literal notranslate"><span class="pre">Complex.point2poly()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.random_walk"><code class="docutils literal notranslate"><span class="pre">Complex.random_walk()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.recover_from_dual_graph"><code class="docutils literal notranslate"><span class="pre">Complex.recover_from_dual_graph()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.save"><code class="docutils literal notranslate"><span class="pre">Complex.save()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.searcher"><code class="docutils literal notranslate"><span class="pre">Complex.searcher()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Complex.dim"><code class="docutils literal notranslate"><span class="pre">Complex.dim</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="relucent.html#relucent.NN"><code class="docutils literal notranslate"><span class="pre">NN</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.NN.forward"><code class="docutils literal notranslate"><span class="pre">NN.forward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.NN.get_all_layer_outputs"><code class="docutils literal notranslate"><span class="pre">NN.get_all_layer_outputs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.NN.get_grid"><code class="docutils literal notranslate"><span class="pre">NN.get_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.NN.output_grid"><code class="docutils literal notranslate"><span class="pre">NN.output_grid()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.NN.shi2weights"><code class="docutils literal notranslate"><span class="pre">NN.shi2weights()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.NN.device"><code class="docutils literal notranslate"><span class="pre">NN.device</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.NN.dtype"><code class="docutils literal notranslate"><span class="pre">NN.dtype</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.NN.num_relus"><code class="docutils literal notranslate"><span class="pre">NN.num_relus</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="relucent.html#relucent.Polyhedron"><code class="docutils literal notranslate"><span class="pre">Polyhedron</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.clean_data"><code class="docutils literal notranslate"><span class="pre">Polyhedron.clean_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.compute_properties"><code class="docutils literal notranslate"><span class="pre">Polyhedron.compute_properties()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.get_bounded_halfspaces"><code class="docutils literal notranslate"><span class="pre">Polyhedron.get_bounded_halfspaces()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.get_bounded_vertices"><code class="docutils literal notranslate"><span class="pre">Polyhedron.get_bounded_vertices()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.get_center_inradius"><code class="docutils literal notranslate"><span class="pre">Polyhedron.get_center_inradius()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.get_hs"><code class="docutils literal notranslate"><span class="pre">Polyhedron.get_hs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.get_interior_point"><code class="docutils literal notranslate"><span class="pre">Polyhedron.get_interior_point()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.get_shis"><code class="docutils literal notranslate"><span class="pre">Polyhedron.get_shis()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.is_face_of"><code class="docutils literal notranslate"><span class="pre">Polyhedron.is_face_of()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.nflips"><code class="docutils literal notranslate"><span class="pre">Polyhedron.nflips()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.plot2d"><code class="docutils literal notranslate"><span class="pre">Polyhedron.plot2d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.plot3d"><code class="docutils literal notranslate"><span class="pre">Polyhedron.plot3d()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.MAX_RADIUS"><code class="docutils literal notranslate"><span class="pre">Polyhedron.MAX_RADIUS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.W"><code class="docutils literal notranslate"><span class="pre">Polyhedron.W</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.Wl2"><code class="docutils literal notranslate"><span class="pre">Polyhedron.Wl2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.b"><code class="docutils literal notranslate"><span class="pre">Polyhedron.b</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.center"><code class="docutils literal notranslate"><span class="pre">Polyhedron.center</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.ch"><code class="docutils literal notranslate"><span class="pre">Polyhedron.ch</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.finite"><code class="docutils literal notranslate"><span class="pre">Polyhedron.finite</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.halfspaces"><code class="docutils literal notranslate"><span class="pre">Polyhedron.halfspaces</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.hs"><code class="docutils literal notranslate"><span class="pre">Polyhedron.hs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.inradius"><code class="docutils literal notranslate"><span class="pre">Polyhedron.inradius</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.interior_point"><code class="docutils literal notranslate"><span class="pre">Polyhedron.interior_point</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.interior_point_norm"><code class="docutils literal notranslate"><span class="pre">Polyhedron.interior_point_norm</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.num_dead_relus"><code class="docutils literal notranslate"><span class="pre">Polyhedron.num_dead_relus</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.num_faces"><code class="docutils literal notranslate"><span class="pre">Polyhedron.num_faces</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.num_shis"><code class="docutils literal notranslate"><span class="pre">Polyhedron.num_shis</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.point"><code class="docutils literal notranslate"><span class="pre">Polyhedron.point</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.shis"><code class="docutils literal notranslate"><span class="pre">Polyhedron.shis</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.tag"><code class="docutils literal notranslate"><span class="pre">Polyhedron.tag</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.vertex_set"><code class="docutils literal notranslate"><span class="pre">Polyhedron.vertex_set</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.vertices"><code class="docutils literal notranslate"><span class="pre">Polyhedron.vertices</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="relucent.html#relucent.Polyhedron.volume"><code class="docutils literal notranslate"><span class="pre">Polyhedron.volume</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="relucent.html#relucent.convert"><code class="docutils literal notranslate"><span class="pre">convert()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="relucent.html#relucent.get_env"><code class="docutils literal notranslate"><span class="pre">get_env()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="relucent.html#relucent.get_mlp_model"><code class="docutils literal notranslate"><span class="pre">get_mlp_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="relucent.html#relucent.set_seeds"><code class="docutils literal notranslate"><span class="pre">set_seeds()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="relucent.html#relucent.split_sequential"><code class="docutils literal notranslate"><span class="pre">split_sequential()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
