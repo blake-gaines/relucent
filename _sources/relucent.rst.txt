@@ -4,14 +4,6 @@ relucent package
 Submodules
 ----------
 
-relucent.bvs module
--------------------
-
-.. automodule:: relucent.bvs
-   :members:
-   :show-inheritance:
-   :undoc-members:
-
 relucent.complex module
 -----------------------
 
@@ -40,6 +32,14 @@ relucent.poly module
 --------------------
 
 .. automodule:: relucent.poly
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+relucent.ss module
+------------------
+
+.. automodule:: relucent.ss
    :members:
    :show-inheritance:
    :undoc-members:
